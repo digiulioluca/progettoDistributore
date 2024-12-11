@@ -5,8 +5,8 @@ public class Alcolici extends Prodotto{
 	private final int etaMinima = 18;
 	
 	// costruttore
-	public Alcolici (String nome, int prezzo, int qta) {
-		super(nome, prezzo, qta);
+	public Alcolici (String nome, int prezzo, int qta, int id) {
+		super(nome, prezzo, qta, id);
 	}
 	
 	/* controllo età per l'erogazione dei prodotti alcolici:
