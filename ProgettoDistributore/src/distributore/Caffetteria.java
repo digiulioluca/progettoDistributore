@@ -1,5 +1,5 @@
 package distributore;
 
-public class Caffetteria {
+public class Caffetteria extends Prodotto {
 
 }

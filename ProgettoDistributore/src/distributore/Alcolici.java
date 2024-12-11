@@ -1,5 +1,5 @@
 package distributore;
 
-public class Alcolici {
+public class Alcolici extends Prodotto{
 
 }
