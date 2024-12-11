@@ -9,6 +9,7 @@ public class Admin {
 	int importo;
 	String prodotto;
 	
+	
 	//COSTRUTTORE
 	public Admin(int codice){
 		this.codice = codice;
@@ -16,7 +17,9 @@ public class Admin {
 	//ARRAYLIST PER CONTENERE I PRODOTTI
 	ArrayList <Prodotto> prodotti = new ArrayList<Prodotto>();
 	
-	public void aggiungi (Prodotto prod) {
+	public void aggiungi (int prezzo, char codice, String nome, int qta) {
+		Alcolici alcolici = new Alcolici( nome,  prezzo,  qta, id);
+		Caffetteria caffetteria = new Caffetteria();
 	
 		//AGGIUNGIAMO IL PRODOTTO PREINSERITO NELLA QUANTITA'
 		boolean add = false;
@@ -39,7 +42,9 @@ public class Admin {
 		
 	
 	public void selezionato(int importo, int codice) {
-		
+		for(int i = 0; i<prodotti.size(); i++) {
+			
+		}
 		
 	}
 	public void elencoop(int transazioni) {
