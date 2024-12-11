@@ -9,6 +9,10 @@ public class Admin {
 	int importo;
 	String prodotto;
 	
+	//COSTRUTTORE
+	public Admin(int codice){
+		this.codice = codice;
+	}
 	//ARRAYLIST PER CONTENERE I PRODOTTI
 	ArrayList <Prodotto> prodotti = new ArrayList<Prodotto>();
 	
