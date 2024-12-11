@@ -3,10 +3,11 @@ package distributore;
 public class Alcolici extends Prodotto{
 	// attributi
 	private final int etaMinima = 18;
+	char final categoria = 'a';
 	
 	// costruttore
-	public Alcolici (String nome, int prezzo, int qta, int id) {
-		super(nome, prezzo, qta, id);
+	public Alcolici (String nome, int prezzo, int qta) {
+		super(nome, prezzo, qta);
 	}
 	
 	/* controllo età per l'erogazione dei prodotti alcolici:
