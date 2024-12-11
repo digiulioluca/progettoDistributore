@@ -18,8 +18,8 @@ public class Admin {
 	ArrayList <Prodotto> prodotti = new ArrayList<Prodotto>();
 	
 	public void aggiungi (int prezzo, char codice, String nome, int qta) {
-		Alcolici alcolici = new Alcolici( nome,  prezzo,  qta, id);
-		Caffetteria caffetteria = new Caffetteria();
+		Alcolici alcolici = new Alcolici( nome,  prezzo,  qta);
+		Caffetteria caffetteria = new Caffetteria(nome, prezzo, qta);
 	
 		//AGGIUNGIAMO IL PRODOTTO PREINSERITO NELLA QUANTITA'
 		boolean add = false;
@@ -45,7 +45,7 @@ public class Admin {
 		for(int i = 0; i<prodotti.size(); i++) {
 			
 		}
-		
+		\	
 	}
 	public void elencoop(int transazioni) {
 	
