@@ -5,14 +5,13 @@ public class Prodotto {
 	protected String nome;
 	protected int prezzo;
 	protected int qta;
-	protected int id;
+	char categoria = 'a';
 	
-	public Prodotto(String nome, int prezzo, int qta, int id) {
+	public Prodotto(String nome, int prezzo, int qta) {
 		// costruttore
 		this.nome = nome;
 		this.prezzo = prezzo;
 		this.qta = qta;
-		this.id = id;
 	}
 	
 	public void erogazione() {
