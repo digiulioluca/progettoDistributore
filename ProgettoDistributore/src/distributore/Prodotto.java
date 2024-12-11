@@ -14,6 +14,7 @@ public class Prodotto {
 	}
 	
 	public void erogazione() {
+		// metodo erogazione. Sottraggo 1 uno all'attributo quantità
 		qta--;
 	}
 }
