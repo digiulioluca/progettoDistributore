@@ -5,7 +5,7 @@ public class Prodotto {
 	protected String nome;
 	protected int prezzo;
 	protected int qta;
-	char final categoria = 'a';
+	char categoria = 'a';
 	
 	public Prodotto(String nome, int prezzo, int qta) {
 		// costruttore

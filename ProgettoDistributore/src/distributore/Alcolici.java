@@ -3,7 +3,7 @@ package distributore;
 public class Alcolici extends Prodotto{
 	// attributi
 	private final int etaMinima = 18;
-	char final categoria = 'a';
+	char categoria = 'a';
 	
 	// costruttore
 	public Alcolici (String nome, int prezzo, int qta) {
