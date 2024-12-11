@@ -6,8 +6,8 @@ public class Caffetteria extends Prodotto {
 	protected int qtaZucchero;
 	protected int qtaCucchiaini;
 	
-	public Caffetteria(String nome, int prezzo, int qta) {
-		super(nome, prezzo, qta);
+	public Caffetteria(String nome, int prezzo, int qta, int id) {
+		super(nome, prezzo, qta, id);
 	}
 	
 	// metodo per erogazione dello zucchero
