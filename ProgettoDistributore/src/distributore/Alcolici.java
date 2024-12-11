@@ -1,9 +1,5 @@
 package distributore;
 
-<<<<<<< HEAD
-public class Alcolici {
-	
-=======
 public class Alcolici extends Prodotto{
 	// attributi
 	private final int etaMinima = 18;
@@ -24,5 +20,5 @@ public class Alcolici extends Prodotto{
 			System.out.println("Età non valida.");
 		}
 	}
->>>>>>> branch 'master' of https://github.com/digiulioluca/progettoDistributore
+	
 }
