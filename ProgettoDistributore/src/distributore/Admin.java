@@ -14,8 +14,7 @@ public class Admin {
 
 	// COSTRUTTORE
 	public Admin() {
-		
-		
+
 		/*
 		 * FOR PER AGGIUNTA PRODOTTI
 		 * 
@@ -80,11 +79,26 @@ public class Admin {
 	public void elencoop(int transazioni) {
 
 	}
-	public void cambiaprezzo(int prezzo) {
-		
+
+	public void cambiaprezzo(int codice, Scanner scanner) {
+		for (Prodotto camb : lista) {
+			if (codice == camb.codice) {
+				System.out.println("Inserire nuovo prezzo");
+				camb.prezzo = scanner.nextDouble();
+
+			}
+
+		}
 	}
-	public void cambiaqta(int qta) {
-		
+
+	public void cambiaqta(int codice, Scanner scanner) {
+		for (Prodotto cqta : lista) {
+			if (codice == cqta.codice) {
+				System.out.println("Inserire nuovo prezzo");
+				cqta.qta = scanner.nextInt(); 
+			}
+		}
 	}
 }
+	
 //>>>>>>> branch 'master' of https://github.com/digiulioluca/progettoDistributore
