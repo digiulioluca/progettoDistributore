@@ -17,11 +17,38 @@ totale incassato dal distributore
 elenco dei prodotti acquistati con relative quantità (es: caffè 10, ginseng 18, coca 4)
  */
 package distributore;
+import java.util.Scanner;
+import java.util.ArrayList;
+import distributore.Admin;
 
 public class Main {
 	public static void main(String[] args) {
-		System.out.println("Hello da Fiamma");
+		
+		
 	}
 
 }
-//Hello World
+/*public static void menu (ArrayList <Prodotto> prodotti, Scanner scanner) {
+int scelta;
+
+do {
+    System.out.println("Che vuoi fare? \n 1) Caffetteria \n 2) Bevande \n 3) Menù Admin \n 4) Esci");
+    scelta = scanner.nextInt();
+    scanner.nextLine();
+    switch (scelta) {
+    case 1:
+        //caffetteria();
+        break;
+    case 2:
+        //bevande();
+        break;
+    case 3:
+        //admin();
+        break;
+    case 4:
+        System.out.println("Arrivederci");
+        System.exit(0);
+    }
+} while (scelta <= 4);
+scanner.close();*/
+}/*
