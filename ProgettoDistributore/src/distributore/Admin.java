@@ -17,23 +17,24 @@ public class Admin {
 	//ARRAYLIST PER CONTENERE I PRODOTTI
 	ArrayList <Prodotto> prodotti = new ArrayList<Prodotto>();
 	
-	public void aggiungi (int prezzo, char codice, String nome, int qta) {
+	public void aggiungicaf (int prezzo, char codice, String nome, int qta) {
 		Alcolici alcolici = new Alcolici( nome,  prezzo,  qta);
-		Caffetteria caffetteria = new Caffetteria(nome, prezzo, qta);
-	
+		Caffetteria caffetteria = new Caffetteria(nome, prezzo,  qta);
+		Prodotto bevande = new Prodotto(nome, prezzo, qta);
+		
 		//AGGIUNGIAMO IL PRODOTTO PREINSERITO NELLA QUANTITA'
 		boolean add = false;
 		for(Prodotto agg: prodotti) {
-			if(agg.nome.equalsIgnoreCase(prod.nome) ) {
+			if(agg.nome.equalsIgnoreCase(caffetteria.nome) ) {
 				add = true;
-				agg.qta += prod.qta;
+				agg.qta += caffetteria.qta;
 				System.out.println("Prodotto esistente, aggiornamento quantità: " + agg.qta);
 				
 			}
 		}
 		//AGGIUNGIAMO IL PRODOTTO NON ANCORA INSERITO IN ARRAYLIST
 		if(add == false) {
-			prodotti.add(prod);
+			prodotti.add(caffetteria);
 		}
 		}
  
@@ -45,7 +46,7 @@ public class Admin {
 		for(int i = 0; i<prodotti.size(); i++) {
 			
 		}
-		\	
+		
 	}
 	public void elencoop(int transazioni) {
 	
