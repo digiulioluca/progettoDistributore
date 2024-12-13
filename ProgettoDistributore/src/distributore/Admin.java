@@ -44,8 +44,7 @@ public class Admin {
 	public void selezionato(int importo, int codice) {
 		for(int i = 0; i<prodotti.size(); i++) {
 			
-		}
-		\	
+		}	
 	}
 	public void elencoop(int transazioni) {
 	
