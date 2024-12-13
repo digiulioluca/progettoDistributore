@@ -94,7 +94,7 @@ public class Admin {
 	public void cambiaqta(int codice, Scanner scanner) {
 		for (Prodotto cqta : lista) {
 			if (codice == cqta.codice) {
-				System.out.println("Inserire nuovo prezzo");
+				System.out.println("Inserire nuova quantità");
 				cqta.qta = scanner.nextInt(); 
 			}
 		}
