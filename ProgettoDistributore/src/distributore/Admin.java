@@ -1,62 +1,90 @@
 package distributore;
+
 import java.util.ArrayList;
+import java.util.Scanner;
+
 /*
  * attributi di admin? codice, transazione,
  */
 public class Admin {
-	int codice;
+	private final int pin = 1027;
 	int transazione;
 	int importo;
 	String prodotto;
-	
-	
-	//COSTRUTTORE
-	public Admin(int codice){
-		this.codice = codice;
-	}
-	//ARRAYLIST PER CONTENERE I PRODOTTI
-	ArrayList <Prodotto> prodotti = new ArrayList<Prodotto>();
-	
-	public void aggiungicaf (int prezzo, char codice, String nome, int qta) {
-		Alcolici alcolici = new Alcolici( nome,  prezzo,  qta);
-		Caffetteria caffetteria = new Caffetteria(nome, prezzo,  qta);
-		Prodotto bevande = new Prodotto(nome, prezzo, qta);
+
+	// COSTRUTTORE
+	public Admin() {
 		
-		//AGGIUNGIAMO IL PRODOTTO PREINSERITO NELLA QUANTITA'
-		boolean add = false;
-		for(Prodotto agg: prodotti) {
-			if(agg.nome.equalsIgnoreCase(caffetteria.nome) ) {
-				add = true;
-				agg.qta += caffetteria.qta;
-				System.out.println("Prodotto esistente, aggiornamento quantità: " + agg.qta);
-				
+		
+		/*
+		 * FOR PER AGGIUNTA PRODOTTI
+		 * 
+		 * for(int i = 0; i< scelta; i++) { scanner.nextLine();
+		 * System.out.println("Inserisci nome prodotto: "); String nome =
+		 * scanner.nextLine(); bevande.setNome(nome);
+		 * System.out.println("Inserisci categoria prodotto: "); String categoria =
+		 * scanner.nextLine(); bevande.setCategoria(categoria);
+		 * System.out.println("Inserisci codice prodotto: "); int codice =
+		 * scanner.nextInt(); bevande.setCodice(codice);
+		 * System.out.println("Inserisci prezzo prodotto: "); double prezzo =
+		 * scanner.nextDouble(); bevande.setPrezzo(prezzo);
+		 * System.out.println("Inserisci quantità prodotto: "); int qta =
+		 * scanner.nextInt(); bevande.setQta(qta); prodotti.add(bevande);
+		 * 
+		 * }
+		 */
+	}
+
+	// ARRAYLIST PER CONTENERE I PRODOTTI
+	ArrayList<Prodotto> lista = new ArrayList<Prodotto>();
+
+	public void aggiungicaf(int qta) {
+
+		// AGGIUNGIAMO IL PRODOTTO PREINSERITO NELLA QUANTITA'
+		for (int a = 0; a < lista.size(); a++) {
+			for (int b = 1; b < lista.size(); b++) {
+				if (lista.get(a).getNome().equalsIgnoreCase(lista.get(b).getNome())) {
+					System.out.println("Nomi uguali, aggiornamento quantità");
+					lista.get(a).qta += qta;
+					lista.remove(b);
+				}
 			}
 		}
-		//AGGIUNGIAMO IL PRODOTTO NON ANCORA INSERITO IN ARRAYLIST
-		if(add == false) {
-			prodotti.add(caffetteria);
-		}
-		}
- 
+	}
+
+	// AGGIUNGIAMO IL PRODOTTO NON ANCORA INSERITO IN ARRAYLIST
 
 //<<<<<<< HEAD
-		
-	
-	public void selezionato(int importo, int codice) {
-		for(int i = 0; i<prodotti.size(); i++) {
-			
-<<<<<<< HEAD
-		}	
-=======
+
+	public void rimozione(int codice) {
+		boolean trovato = false;
+		for (Prodotto rim : lista) {
+			if (codice == rim.codice) {
+				lista.remove(rim);
+				trovato = true;
+
+			}
+
 		}
-		
->>>>>>> refs/heads/branch_LucaDG
+		if (trovato == false) {
+			System.out.println("Prodotto non trovato");
+		}
+
+//<<<<<<< HEAD
+
+//=======
 	}
+
+//>>>>>>> refs/heads/branch_LucaDG
+
 	public void elencoop(int transazioni) {
-	
+
+	}
+	public void cambiaprezzo(int prezzo) {
+		
+	}
+	public void cambiaqta(int qta) {
 		
 	}
 }
-
-
 //>>>>>>> branch 'master' of https://github.com/digiulioluca/progettoDistributore

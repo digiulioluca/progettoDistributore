@@ -2,10 +2,12 @@ package distributore;
 
 public class Prodotto {
 	// attributi
+	
 	protected String nome;
-	protected int prezzo;
+	protected double prezzo;
 	protected int qta;
-	String categoria;
+	protected int codice;
+	protected String categoria;
 
 	public Prodotto() {
 		// costruttore
@@ -19,11 +21,11 @@ public class Prodotto {
 		this.nome = nome;
 	}
 
-	public int getPrezzo() {
+	public double getPrezzo() {
 		return prezzo;
 	}
 
-	public void setPrezzo(int prezzo) {
+	public void setPrezzo(double prezzo) {
 		this.prezzo = prezzo;
 	}
 
@@ -41,6 +43,14 @@ public class Prodotto {
 
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
+	}
+	
+	public int getCodice() {
+		return codice;
+	}
+
+	public void setCodice(int codice) {
+		this.codice = codice;
 	}
 
 	public void erogazione() {
