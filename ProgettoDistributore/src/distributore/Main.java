@@ -26,34 +26,14 @@ public class Main {
 		System.out.println("Benvenuto o benvenuta ");
 		Scanner scanner = new Scanner(System.in);
 		ArrayList<Prodotto> prodotti = new ArrayList<Prodotto>();
-		menu(prodotti, scanner);
+		menu(scanner);
+		scanner.close();
+		System.exit(0);
 	}
 
-	public void acquisto(Scanner scanner, double credito, int codex, ArrayList<Prodotto> prodotti) {
-		System.out.println("Inserisci denaro ");
-		credito = scanner.nextInt();
-		for (Prodotto i : prodotti) {
-			if (i.codice == codex && i.prezzo <= credito && i.qta > 0) {
-				i.erogazione();
-				i.nacquisti++;
-				Admin.transazione += i.prezzo;
-				credito -= i.prezzo;
-				System.out.println("Acquisto effettuato con successo! Credito residuo: " + credito);
-			} else if (i.codice != codex) {
-				System.out.println("Codice errato, riprovare. ");
-			} else if (i.prezzo > credito) {
-				System.out.println("Credito insufficiente, inserire denaro. ");
-			} else if (i.qta <= 0) {
-				System.out.println("Prodotto esaurito. ");
-			}
-
-		}
-
-	}
-
-	public static void menu(ArrayList<Prodotto> prodotti, Scanner scanner) {
+	public static void menu(Scanner scanner) {
 		int scelta;
-		for (Prodotto x : prodotti) {
+		for (Prodotto x : Admin.lista) {
 			System.out.println("stampo prodotti" + x.nome + x.getNome());
 		}
 		do {
@@ -62,7 +42,8 @@ public class Main {
 			scanner.nextLine();
 			switch (scelta) {
 			case 1:
-				System.out.println("Selezionare il tipo di bevanda: \n1) Caffetteria \n2) Bevande fredde \n3) Alcolici: ");
+				Admin.filtracat(scanner);
+				acquisto(scanner);
 				
 				break;
 			case 2:

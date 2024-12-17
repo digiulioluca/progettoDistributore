@@ -35,7 +35,7 @@ public class Admin {
 	}
 
 	// ARRAYLIST PER CONTENERE I PRODOTTI
-	ArrayList<Prodotto> lista = new ArrayList<Prodotto>();
+	static ArrayList<Prodotto> lista = new ArrayList<Prodotto>();
 
 	public void aggiungi(int qta) {
 
@@ -112,9 +112,9 @@ public class Admin {
 	}
 
 //FILTRO CATEGORIA
-	public void filtracat(String categoria, int scelta, Scanner scanner, int codice) {
+	public static void filtracat(Scanner scanner) {
 		// \n1) Caffetteria \n2) Bevande fredde \n3) Alcolici: ");
-		System.out.println("Inserire la categoria del codice da scegliere: ");
+		System.out.println("Inserire la categoria del codice da scegliere: \n1) Caffetteria \n2) Bevande fredde \n3) Alcolici ");
 		int filtro = scanner.nextInt();
 		for (Prodotto n : lista) {
 			if (filtro == 1) {
