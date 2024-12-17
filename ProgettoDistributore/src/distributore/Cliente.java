@@ -53,6 +53,7 @@ public class Cliente {
 				Admin.transazione += i.prezzo;
 				credito -= i.prezzo;
 				System.out.println("Acquisto effettuato con successo! Credito residuo: " + credito);
+				return;
 			} else if (i.codice != codex) {
 				System.out.println("Codice errato, riprovare. ");
 			} else if (i.prezzo > credito) {
