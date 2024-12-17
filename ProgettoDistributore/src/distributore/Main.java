@@ -33,6 +33,7 @@ public class Main {
 
 	public static void menu(Scanner scanner) {
 		int scelta;
+		Cliente cliente = new Cliente(9);
 		for (Prodotto x : Admin.lista) {
 			System.out.println("stampo prodotti" + x.nome + x.getNome());
 		}
@@ -43,11 +44,11 @@ public class Main {
 			switch (scelta) {
 			case 1:
 				Admin.filtracat(scanner);
-				acquisto(scanner);
+				cliente.acquisto(scanner);
 				
 				break;
 			case 2:
-				// admin();
+				Admin.menuAdmin(scanner);
 				break;
 
 			case 3:
