@@ -7,10 +7,10 @@ public class Prodotto {
 	protected double prezzo;
 	protected int qta;
 	protected int codice;
-	protected String categoria;
+	protected int categoria;
 	protected int nacquisti;
 
-	public Prodotto(String nome, double prezzo, int qta, int codice, String categoria) {
+	public Prodotto(String nome, double prezzo, int qta, int codice, int categoria) {
 		// costruttore
 		this.nome = nome;
 		this.prezzo = prezzo;
@@ -44,11 +44,11 @@ public class Prodotto {
 		this.qta = qta;
 	}
 
-	public String getCategoria() {
+	public int getCategoria() {
 		return categoria;
 	}
 
-	public void setCategoria(String categoria) {
+	public void setCategoria(int categoria) {
 		this.categoria = categoria;
 	}
 
@@ -67,8 +67,7 @@ public class Prodotto {
 
 	@Override
 	public String toString() {
-		return "Nome: " + nome + ", Categoria: " + categoria + ", Codice: " + codice + ", Prezzo: " + prezzo
-				+ ", Quantità: " + qta;
+		return "Codice: "+codice+", Nome: " + nome +", Prezzo: € "+ prezzo +", Quantità: "+qta;
 	}
 
 	public int getNacquisti() {

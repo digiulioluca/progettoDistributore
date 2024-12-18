@@ -18,45 +18,54 @@ elenco dei prodotti acquistati con relative quantità (es: caffè 10, ginseng 18
  */
 package distributore;
 
-import java.util.*;
+import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] args) {
 
 		System.out.println("Benvenuto o benvenuta ");
 		Scanner scanner = new Scanner(System.in);
-		ArrayList<Prodotto> prodotti = new ArrayList<Prodotto>();
 		menu(scanner);
 		scanner.close();
 		System.exit(0);
 	}
 
+	/*
+	 * metodo menu: presenti un'istanza della Classe cliente e una variabile intera
+	 * che utilizzeremo per la gestione do-while e switch
+	 */
 	public static void menu(Scanner scanner) {
-		int scelta;
-		Cliente cliente = new Cliente(9);
-		for (Prodotto x : Admin.lista) {
-			System.out.println("stampo prodotti" + x.nome + x.getNome());
-		}
+		int scelta = 1;
+		Cliente cliente = new Cliente(0);
+		Admin.aggiunteStandard();
 		do {
-			System.out.println("Che vuoi fare? \n 1) Acquista \n 2) Menù Admin \n 3) Esci");
-			scelta = scanner.nextInt();
-			scanner.nextLine();
+			System.out.println("Cosa vuoi fare?\n1) Acquista \n2) Menù Admin \n3) Esci");
+			try {
+				scelta = scanner.nextInt();
+				scanner.nextLine();
+			} catch (Exception e) {
+				System.out.println("Errore. Inserire un numero.");
+				scanner.nextLine();
+				continue;
+			}
 			switch (scelta) {
 			case 1:
-				Admin.filtracat(scanner);
-				cliente.acquisto(scanner);
-				
+				if (Admin.filtracat(scanner))
+					cliente.gestioneAcquisto(scanner);
 				break;
 			case 2:
-				Admin.menuAdmin(scanner);
+				if (Admin.accessoGestore(scanner))
+					Admin.menuAdmin(scanner);
 				break;
-
 			case 3:
 				System.out.println("Arrivederci");
 				System.exit(0);
+			default:
+				System.out.println("Codice errato.");
 			}
+
 		} while (scelta <= 4);
-		scanner.close();
+
 	}
 
 }
