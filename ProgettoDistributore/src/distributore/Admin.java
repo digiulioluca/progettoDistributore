@@ -18,7 +18,7 @@ public class Admin {
 	public static final String ANSI_RESET = "\u001B[0m";
 	public static final String ANSI_GREEN = "\u001B[32m";
 	public static final String ANSI_BRIGHTRED = "\u001B[91m";
-
+	public static final String ANSI_BRIGHTYELLOW = "\u001B[93m";
 	static ArrayList<Prodotto> lista = new ArrayList<Prodotto>();
 
 	// costruttore
@@ -78,12 +78,12 @@ public class Admin {
 	public static void aggiungi(Prodotto prod) {
 		for (Prodotto prodotti : lista) {
 			if (prod.getNome().equalsIgnoreCase(prodotti.getNome())) {
-				System.out.println("Nomi uguali, aggiornamento quantità.");
+				System.out.println(ANSI_BRIGHTYELLOW + "Nomi uguali, aggiornamento quantità." + ANSI_RESET);
 				prodotti.qta += prod.qta;
 				return;
 			}
 			if (prod.codice == prodotti.codice) {
-				System.out.println("Codice già esistente, prodotto rifiutato");
+				System.out.println(ANSI_BRIGHTRED + "Codice già esistente, prodotto rifiutato" + ANSI_RESET);
 				return;
 			}
 		}
@@ -168,7 +168,7 @@ public class Admin {
 	 * viene stampato un messaggio d'errore.
 	 */
 	public static boolean filtracat(Scanner scanner) {
-		System.out.println("Inserire il numero della categoria: \n1) Caffetteria \n2) Bevande fredde \n3) Alcolici ");
+		System.out.println(ANSI_BRIGHTCYAN + "Inserire il numero della categoria:" + ANSI_RESET + "\n1) Caffetteria \n2) Bevande fredde \n3) Alcolici ");
 		int filtro = scanner.nextInt();
 		boolean trovato = false;
 		for (Prodotto prodotti : lista) {
@@ -178,7 +178,7 @@ public class Admin {
 			}
 		}
 		if (trovato == false)
-			System.out.println("Categoria non trovata.");
+			System.out.println(ANSI_BRIGHTYELLOW + "Categoria non trovata.");
 		return trovato;
 	}
 
@@ -300,7 +300,7 @@ public class Admin {
 			scanner.nextLine();
 			switch (scelta) {
 			case 1:
-				System.out.println("Quanti prodotti vuoi inserire?");
+				System.out.println(ANSI_BRIGHTCYAN + "Quanti prodotti vuoi inserire?" + ANSI_RESET);
 				int numero = scanner.nextInt();
 				for (int i = 0; i < numero; i++) {
 					Prodotto prod = new Prodotto("", 0, 0, 0, 0);
@@ -308,7 +308,7 @@ public class Admin {
 					System.out.println("Inserisci nome prodotto: ");
 					String nome = scanner.nextLine();
 					prod.setNome(nome);
-					System.out.println("Inserisci categoria prodotto (Caffetteria, Bevande, Alcolici): ");
+					System.out.println("Inserisci categoria prodotto (1) Caffetteria 2) Bevande, 3) Alcolici): ");
 					int categoria = scanner.nextInt();
 					prod.setCategoria(categoria);
 					System.out.println(
@@ -370,7 +370,7 @@ public class Admin {
 				System.out.println("Ritorno al menù principale");
 				break;
 			default:
-				System.out.println("Codice errato.");
+				System.out.println(ANSI_BRIGHTRED + "Codice errato." + ANSI_RESET);
 			}
 		} while (scelta != 11);
 	}

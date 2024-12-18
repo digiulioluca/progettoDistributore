@@ -21,6 +21,12 @@ package distributore;
 import java.util.Scanner;
 
 public class Main {
+	public static final String ANSI_BRIGHTCYAN = "\u001B[96m";
+	public static final String ANSI_RESET = "\u001B[0m";
+	public static final String ANSI_GREEN = "\u001B[32m";
+	public static final String ANSI_BRIGHTRED = "\u001B[91m";
+
+
 	public static void main(String[] args) {
 
 		System.out.println("Benvenuto o benvenuta ");
@@ -39,12 +45,12 @@ public class Main {
 		Cliente cliente = new Cliente(0);
 		Admin.aggiunteStandard();
 		do {
-			System.out.println("Cosa vuoi fare?\n1) Acquista \n2) Menù Admin \n3) Esci");
+			System.out.println(ANSI_BRIGHTCYAN + "Cosa vuoi fare?" + ANSI_RESET +"\n1) Acquista \n2) Menù Admin \n3) Esci");
 			try {
 				scelta = scanner.nextInt();
 				scanner.nextLine();
 			} catch (Exception e) {
-				System.out.println("Errore. Inserire un numero.");
+				System.out.println(ANSI_BRIGHTRED + "Errore. Inserire un numero." + ANSI_RESET);
 				scanner.nextLine();
 				continue;
 			}
@@ -61,7 +67,7 @@ public class Main {
 				System.out.println("Arrivederci");
 				System.exit(0);
 			default:
-				System.out.println("Codice errato.");
+				System.out.println(ANSI_BRIGHTRED +"Codice errato.");
 			}
 
 		} while (scelta <= 4);
