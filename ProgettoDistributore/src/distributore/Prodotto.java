@@ -2,15 +2,22 @@ package distributore;
 
 public class Prodotto {
 	// attributi
-	
+
 	protected String nome;
 	protected double prezzo;
 	protected int qta;
 	protected int codice;
-	protected String categoria;
+	protected int categoria;
+	protected int nacquisti;
 
-	public Prodotto() {
+	public Prodotto(String nome, double prezzo, int qta, int codice, int categoria) {
 		// costruttore
+		this.nome = nome;
+		this.prezzo = prezzo;
+		this.qta = qta;
+		this.codice = codice;
+		this.categoria = categoria;
+		this.nacquisti = 0;
 	}
 
 	public String getNome() {
@@ -37,14 +44,14 @@ public class Prodotto {
 		this.qta = qta;
 	}
 
-	public String getCategoria() {
+	public int getCategoria() {
 		return categoria;
 	}
 
-	public void setCategoria(String categoria) {
+	public void setCategoria(int categoria) {
 		this.categoria = categoria;
 	}
-	
+
 	public int getCodice() {
 		return codice;
 	}
@@ -57,4 +64,18 @@ public class Prodotto {
 		// metodo erogazione. Sottraggo 1 uno all'attributo quantità
 		qta--;
 	}
+
+	@Override
+	public String toString() {
+		return "Codice: "+codice+", Nome: " + nome +", Prezzo: € "+ prezzo +", Quantità: "+qta;
+	}
+
+	public int getNacquisti() {
+		return nacquisti;
+	}
+
+	public void setNacquisti(int nacquisti) {
+		this.nacquisti = nacquisti;
+	}
+
 }
