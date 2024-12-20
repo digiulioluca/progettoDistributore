@@ -70,7 +70,7 @@ public class Main {
 				System.out.println(ANSI_BRIGHTRED +"Codice errato.");
 			}
 
-		} while (scelta <= 4);
+		} while (scelta !=3);
 
 	}
 

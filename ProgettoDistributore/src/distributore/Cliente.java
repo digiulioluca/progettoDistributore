@@ -123,6 +123,7 @@ public class Cliente {
 								 * dello zucchero verrà eseguito all'interno del primo metodo*/
 								Admin.gestionePalette(scanner);
 							}
+							
 							System.out.println(ANSI_GREEN+"Acquisto effettuato con successo!"+ANSI_RESET);
 						} else {
 							System.out.println(ANSI_BRIGHTRED+"Prodotto momentaneamente non disponibile. "
